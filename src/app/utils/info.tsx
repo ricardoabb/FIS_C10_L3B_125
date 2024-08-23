@@ -1,7 +1,8 @@
 
 export const info =
 {
-    intro: 'Durante uma tempestade, a formação de nuvens carregadas eletricamente resulta em uma diferença de potencial (ddp) significativa entre a base das nuvens e o solo.\nEssa diferença de potencial pode atingir centenas de milhões de volts. Quando a ddp se torna grande o suficiente para superar a resistência do ar, ocorre uma descarga elétrica em forma de raio.\nO raio, então, é uma intensa corrente elétrica que flui entre a nuvem e o solo, equilibrando as cargas elétricas e neutralizando a ddp. Esse processo é acompanhado por um espetáculo visual impressionante e, na maioria das vezes, por fenômenos sonoros como trovões.\nA compreensão da ddp na geração de raios é importante para a previsão de tempestades e para a redução de danos causados por descargas elétricas.'
+    intro: 'Durante uma tempestade, a formação de nuvens carregadas eletricamente resulta em uma diferença de potencial (ddp) significativa entre a base das nuvens e o solo.\nEssa diferença de potencial pode atingir centenas de milhões de volts. Quando a ddp se torna grande o suficiente para superar a resistência do ar, ocorre uma descarga elétrica em forma de raio.\nO raio, então, é uma intensa corrente elétrica que flui entre a nuvem e o solo, equilibrando as cargas elétricas e neutralizando a ddp. Esse processo é acompanhado por um espetáculo visual impressionante e, na maioria das vezes, por fenômenos sonoros como trovões.\nA compreensão da ddp na geração de raios é importante para a previsão de tempestades e para a redução de danos causados por descargas elétricas.',
+    conclusion: 'Foi possível perceber que a compreensão da diferença de potencial na geração de raios é fundamental não apenas para entendermos os fenômenos atmosféricos, mas também para aprimorarmos nossa capacidade de prever e diminuir os impactos das tempestades elétricas. À medida que a ciência avança, novas tecnologias e métodos de monitoramento nos permitem melhorar os sistemas de alerta precoce e implementar medidas de segurança mais eficazes e, com isso, continuar avançando em direção a um futuro mais seguro diante dos desafios naturais eminentes.'
 }
 
 
@@ -10,12 +11,14 @@ export const card = [
     {
         id: 1,
         title: 'Diferença de potencial ',
-        content:'Para que um raio ocorra, é necessário que a diferença de potencial elétrico entre a nuvem e a superfície terrestre, ou entre duas nuvens, seja significativa o bastante para ionizar o ar. Isso resulta na perda de elétrons pelos átomos do ar, facilitando a condução de corrente elétrica.'
+        content:'Para que um raio ocorra, é necessário que a diferença de potencial elétrico entre a nuvem e a superfície terrestre, ou entre duas nuvens, seja significativa o bastante para ionizar o ar. Isso resulta na perda de elétrons pelos átomos do ar, facilitando a condução de corrente elétrica.',
+        position: 'top-[10%] left-[22%]'
     },
     {
         id: 2,
         title: 'Nuvens de tempestade',
-        content:'Dentro de uma nuvem de tempestade, os cristais de gelo, as gotículas de água e o granizo são impulsionados uns contra os outros pelos ventos. A cada colisão, os átomos trocam elétrons entre si. Átomos que recebem elétrons ficam eletricamente negativos, enquanto os que perdem elétrons ficam eletricamente positivos.'
+        content:'Dentro de uma nuvem de tempestade, os cristais de gelo, as gotículas de água e o granizo são impulsionados uns contra os outros pelos ventos. A cada colisão, os átomos trocam elétrons entre si. Átomos que recebem elétrons ficam eletricamente negativos, enquanto os que perdem elétrons ficam eletricamente positivos.',
+        position: 'md:top-[2%] left-[28%] md:left-[37%]'
     },
     {
         id: 3,
