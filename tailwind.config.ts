@@ -26,12 +26,18 @@ const config: Config = {
           '0%, 100%': { transform: 'scale(1)', opacity: '1' },
           '50%': { transform: 'scale(1.06)', opacity: '1' },
         },
+        'float-animation':{
+          '0%, 100%': {transform: 'translateY(0)'},
+          '50%': {transform: 'translateY(16px)'},
+          },
       },
       animation: {
         'fade-in-out': 'fade-in-out 1s infinite',
+        float: 'float-animation 3s ease-in-out infinite',
         slideIn: 'slideIn 1s ease-in-out forwards',
         pulse: 'pulse 2s infinite',
       },
+      
     },
   },
   plugins: [],

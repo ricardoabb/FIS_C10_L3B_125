@@ -25,9 +25,15 @@ type textInfoProp = {
 
 export function Intro({ title = "title test", content, imageThumb = "", image1 = "", image2 = "", video = "", tapeColor = "fill-red-300", bgColor, }: textInfoProp) {
 
+    const handleClick = () => {
+        const introElement = document.getElementById('intro');
+        if (introElement) {
+            introElement.scrollIntoView({ behavior: 'smooth' });
+        }
+    };
 
     return (
-        <div className='relative w-full pb-24 bg-gradient-to-b from-amber-500 to-yellow-400 pt-40 '>
+        <div className='relative w-full pb-24 bg-gradient-to-b from-amber-500 to-yellow-400 pt-20 '>
             <div className='flex justify-center items-center gap-2 w-full -rotate-1 bg-orange-500 py-7 '>
                 <h1 className='font-bold text-4xl text-center '>CAMPO <br /> ELÉTRICO</h1>
                 <div className='relative w-[52px] h-[62px]'>
@@ -45,7 +51,7 @@ export function Intro({ title = "title test", content, imageThumb = "", image1 =
             < Cloud x={100} y={980} />
             < Cloud x={200} y={1100} />
             <div>
-                <div className='relative w-80 h-[121px] mx-auto my-[80px]'>
+                <div className='relative w-80 h-[121px] mx-auto my-[60px]'>
                     <Image
                         src={titleElement}
                         alt={title}
@@ -54,7 +60,7 @@ export function Intro({ title = "title test", content, imageThumb = "", image1 =
                         priority={true}
                     />
                 </div>
-                <div className='relative w-[auto] h-[500px] mb-12 hover:-translate-y-2 mx-auto transition-all ease-in-out '>
+                <div className='relative w-[auto] h-[460px] mb-12  mx-auto animate-float cursor-pointer' onClick={handleClick}>
                     <Image
                         src={cloudElement}
                         alt={title}
@@ -63,7 +69,9 @@ export function Intro({ title = "title test", content, imageThumb = "", image1 =
                         priority={true}
                     />
                 </div>
-                <TextBox title='' content={info.intro} bgColor='bg-orange-500' hide={true} />
+                <div id='intro' className='py-[200px]'>
+                    <TextBox title='' content={info.intro} bgColor='bg-orange-500' hide={true} />
+                </div>
             </div>
         </div>
     )

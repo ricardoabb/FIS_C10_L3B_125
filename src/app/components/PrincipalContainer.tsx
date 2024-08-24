@@ -1,23 +1,16 @@
 "use client"
 import Image from 'next/legacy/image';
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 
-import eElement from '@/app/assets/element-e.png';
 import city from '@/app/assets/city.webp';
 import cloudMedium from '@/app/assets/cloud-medium.webp';
 import cloudPrincipal from '@/app/assets/cloud-large.webp';
 import thunder from '@/app/assets/thunder.webp';
 
-import { TextBox } from './TextBox';
-
-import { info, card } from '../utils/info';
-import InteractiveImage from './InteractiveImage';
+import { card } from '../utils/info';
 import { Starts } from './Start';
-import LightingBolt from './LightningBolt';
-import LightningBolt from './LightningBolt';
 import { Pin } from './Pin';
-
-
+import DrawLineBetweenElements from './DrawLineBetweenElements';
 
 type textInfoProp = {
     title?: string;
@@ -32,6 +25,25 @@ type textInfoProp = {
 };
 
 export function PrincipalContainer({ title = "title test", content, imageThumb = "", image1 = "", image2 = "", video = "", tapeColor = "fill-red-300", bgColor, }: textInfoProp) {
+   
+    const [lineAttributes, setLineAttributes] = useState({ x1: 0, y1: 0, x2: 0, y2: 0 });
+
+    useEffect(() => {
+        const elementA = document.getElementById('a');
+        const elementB = document.getElementById('b');
+
+        if (elementA && elementB) {
+            const rectA = elementA.getBoundingClientRect();
+            const rectB = elementB.getBoundingClientRect();
+
+            setLineAttributes({
+                x1: rectA.left + rectA.width / 2,
+                y1: rectA.top + rectA.height / 2,
+                x2: rectB.left + rectB.width / 2,
+                y2: rectB.top + rectB.height / 2,
+            });
+        }
+    }, []);
 
 
     return (
@@ -41,9 +53,15 @@ export function PrincipalContainer({ title = "title test", content, imageThumb =
                 {card?.map((item, index) => {
                     return <Pin key={index} id={index} title={item.title} content={item.content} position={item.position} />
                 })}
-                <div className='pin absolute  flex justify-center items-center  w-[2.5em] h-[2.5em] p-[2px] rounded-full bg-transparent border-2 border-orange-500 z-20'>
+                {/* <div id='a' className='pin absolute top-[62%] right-[23%]  flex justify-center items-center  w-[2.5em] h-[2.5em] p-[2px] rounded-full bg-transparent border-2 border-orange-500 z-20'>
+                    <span className='flex justify-center items-center bg-orange-500 text-sm md:text-base rounded-full w-full h-full '>01</span>
+                </div> */}
+
+                <div id='b' className='pin absolute top-[93%] right-[10%]  flex justify-center items-center  w-[2.5em] h-[2.5em] p-[2px] rounded-full bg-transparent border-2 border-orange-500 z-20'>
                     <span className='flex justify-center items-center bg-orange-500 text-sm md:text-base rounded-full w-full h-full '>01</span>
                 </div>
+
+                <DrawLineBetweenElements />
 
                 <div className='absolute top-0 -left-9 w-[50%] md:w-[40%] h-full mb-[3em] mx-auto transition-all ease-in-out'>
                     <Image

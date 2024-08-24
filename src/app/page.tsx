@@ -4,6 +4,7 @@ import { PrincipalContainer } from "./components/PrincipalContainer";
 import { Starts } from "./components/Start";
 import { TextBox } from "./components/TextBox";
 import { info } from "./utils/info";
+import { CardModal } from "./components/CardModal";
 
 export default function Home() {
   return (
@@ -14,6 +15,7 @@ export default function Home() {
      <div className="py-20 bg-[#4f2708]">
      <TextBox title="Conclusão" content={info.conclusion} bgColor='bg-[#2F1704]' />
      </div>
+     <CardModal />
     </main>
   );
 }

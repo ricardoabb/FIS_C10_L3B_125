@@ -17,7 +17,7 @@ export function TextBox({ content = "", title = "", hide = false, bgColor = "bla
 
 
     return (
-        <div id="container" className={`relative ${isOpen ? 'w-full mb-24'  : 'w-[90%] mb-16' }  lg:w-[750px] h-[450px] md:h-[356px] mx-auto    py-8 pt-14 px-5 ${bgColor} bg-opacity-75 rounded-2xl shadow-md`}>
+        <div id="container" className={`relative ${isOpen ? 'w-full mb-24'  : 'w-[90%] mb-16' }  lg:w-[750px] h-[450px] md:h-[400px] mx-auto    py-8 pt-14 px-5 ${bgColor} bg-opacity-75 rounded-2xl shadow-md`}>
 
 
             <div id="title" className={`flex items-center justify-center gap-2 border-sand-500  ${hide ? "hidden" : "block"} `}>
