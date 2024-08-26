@@ -1,7 +1,5 @@
-import Image from "next/image";
 import { Intro } from "./components/Intro";
 import { PrincipalContainer } from "./components/PrincipalContainer";
-import { Starts } from "./components/Stars";
 import { TextBox } from "./components/TextBox";
 import { info } from "./utils/info";
 import { CardModal } from "./components/CardModal";
