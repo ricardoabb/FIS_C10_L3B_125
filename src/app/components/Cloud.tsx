@@ -5,11 +5,10 @@ import { CloudElement } from './CloudElement';
 type cloudProps = {
     x: number;
     y: number;
-
-
+    color: string;
 };
 
-export function Cloud({ y=0, x=-100}: cloudProps) {
+export function Cloud({ y=0, x=-100, color}: cloudProps) {
     const [xPos, setXPos] = useState(x); // Inicia fora da tela à esquerda
     const [yPos, setYPos] = useState(0);
 
@@ -28,7 +27,7 @@ export function Cloud({ y=0, x=-100}: cloudProps) {
             className="absolute "
             style={{ transform: `translate(${xPos}%, ${yPos}px)` }}
         >
-            <CloudElement />
+            <CloudElement color={color} />
         </div>
     );
 }

@@ -9,6 +9,7 @@ import { TextBox } from './TextBox';
 
 import { info } from '../utils/info';
 import { Cloud } from './Cloud';
+import { useModalStore } from '../store/useModalStore';
 
 
 type textInfoProp = {
@@ -23,13 +24,15 @@ type textInfoProp = {
 
 };
 
-export function Intro({ title = "title test", content, imageThumb = "", image1 = "", image2 = "", video = "", tapeColor = "fill-red-300", bgColor, }: textInfoProp) {
+export function Intro({ title = "title test" }: textInfoProp) {
+    const { textEndState, changetextEndState } = useModalStore();
 
-    const handleClick = () => {
-        const introElement = document.getElementById('intro');
+    const handleClick = (anchor: string) => {
+        const introElement = document.getElementById(anchor);
         if (introElement) {
             introElement.scrollIntoView({ behavior: 'smooth' });
         }
+        changetextEndState(false);
     };
 
     return (
@@ -46,10 +49,23 @@ export function Intro({ title = "title test", content, imageThumb = "", image1 =
                     />
                 </div>
             </div>
-            < Cloud x={0} y={800} />
-            < Cloud x={-50} y={900} />
-            < Cloud x={100} y={980} />
-            < Cloud x={200} y={1100} />
+            < Cloud x={0} y={500} color='fill-orange-500' />
+            < Cloud x={200} y={310} color='fill-orange-500' />
+            < Cloud x={90} y={90} color='fill-orange-500' />
+            < Cloud x={0} y={600} color='fill-orange-500' />
+            < Cloud x={-50} y={700} color='fill-orange-500' />
+            < Cloud x={100} y={580} color='fill-orange-500' />
+            < Cloud x={200} y={500} color='fill-orange-500' />
+            < Cloud x={700} y={310} color='fill-orange-500' />
+            < Cloud x={500} y={90} color='fill-orange-500' />
+
+
+            < Cloud x={0} y={800} color='fill-orange-500' />
+            < Cloud x={-50} y={900} color='fill-orange-500' />
+            < Cloud x={100} y={980} color='fill-orange-500' />
+            < Cloud x={200} y={1100} color='fill-orange-500' />
+            < Cloud x={700} y={1100} color='fill-orange-500' />
+            < Cloud x={500} y={900} color='fill-orange-500' />
             <div>
                 <div className='relative w-80 h-[121px] mx-auto my-[60px]'>
                     <Image
@@ -60,7 +76,7 @@ export function Intro({ title = "title test", content, imageThumb = "", image1 =
                         priority={true}
                     />
                 </div>
-                <div className='relative w-[auto] h-[460px] mb-12  mx-auto animate-float cursor-pointer' onClick={handleClick}>
+                <div className='relative w-[auto] h-[460px] mb-12  mx-auto animate-float cursor-pointer' onClick={() => handleClick('intro')}>
                     <Image
                         src={cloudElement}
                         alt={title}
@@ -69,8 +85,19 @@ export function Intro({ title = "title test", content, imageThumb = "", image1 =
                         priority={true}
                     />
                 </div>
-                <div id='intro' className='py-[200px]'>
-                    <TextBox title='' content={info.intro} bgColor='bg-orange-500' hide={true} />
+                <div id='intro' className=' relative py-[200px]'>
+                    <TextBox title='' content={info.intro} bgColor='bg-orange-500 bg-opacity-75 text-white ' hide={true} />
+                    
+                        <div className={`absolute bottom-[-60px] left-[10%] md:left-[30%] ${textEndState ? 'h-[460px] opacity-100 cursor-pointer' : 'h-[0] opacity-0' } transition-all ease-in-out w-[200px]  mb-12  mx-auto animate-float'`} onClick={() => handleClick('principal')}>
+                            <Image
+                                src={cloudElement}
+                                alt={title}
+                                layout="fill" // Faz a imagem preencher o contêiner
+                                objectFit="contain" // Ajusta a imagem para cobrir o contêiner  
+                                priority={true}
+                            />
+                        </div>
+                   
                 </div>
             </div>
         </div>

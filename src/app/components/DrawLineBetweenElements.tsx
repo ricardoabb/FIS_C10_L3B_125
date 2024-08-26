@@ -19,8 +19,8 @@ const DrawLineBetweenElements = () => {
         const startX = rectA.left + rectA.width / 2 - (parentRect?.left || 0);
         const startY = rectA.top + rectA.height / 2 - (parentRect?.top || 0);
 
-        const endX = rectB.left + rectB.width / 2 - (parentRect?.left || 0);
-        const endY = rectB.top + rectB.height / 2 - (parentRect?.top || 0);
+        const endX = rectB.left + 40 + rectB.width / 2 - (parentRect?.left || 0);
+        const endY = rectB.top + 20 + rectB.height / 2 - (parentRect?.top || 0);
 
         // Ajuste o tamanho do canvas para cobrir a área necessária
         canvas.width = parentRect?.width || window.innerWidth;
@@ -41,6 +41,12 @@ const DrawLineBetweenElements = () => {
         ctx.moveTo(endX, startY);
         ctx.lineTo(endX, endY); // Linha vertical
         ctx.stroke();
+
+        const radius = 5; // Raio do círculo
+        ctx.beginPath();
+        ctx.arc(endX, endY, radius, 0, 2 * Math.PI);
+        ctx.fillStyle = '#FF7F50'; // Mesma cor da linha
+        ctx.fill();
       }
     }
   }, []);

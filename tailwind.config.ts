@@ -24,7 +24,7 @@ const config: Config = {
         },
         pulse: {
           '0%, 100%': { transform: 'scale(1)', opacity: '1' },
-          '50%': { transform: 'scale(1.06)', opacity: '1' },
+          '50%': { transform: 'scale(1.06)', background: '#fff', opacity: '1' },
         },
         'float-animation':{
           '0%, 100%': {transform: 'translateY(0)'},
@@ -37,6 +37,9 @@ const config: Config = {
         slideIn: 'slideIn 1s ease-in-out forwards',
         pulse: 'pulse 2s infinite',
       },
+      boxShadow: {
+        'center': '0 0 10px ',
+      }
       
     },
   },

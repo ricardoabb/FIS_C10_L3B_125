@@ -3,6 +3,7 @@ import Image from "next/image";
 import React, { useState, useEffect } from 'react';
 
 import iconNext from '@/app/assets/icon-next.svg';
+import { useModalStore } from "../store/useModalStore";
 
 type TextBoxProps = {
     text: string;
@@ -19,6 +20,8 @@ export function AnimatedText({ text, limit = 140, delay = 5 }: TextBoxProps) {
     const [displayBtn, setDisplayBtn] = useState<string>('hidden');
     const [animationNextBtn, setAnimationNextBtn] = useState<string>('animate-fade-in-out');
 
+    const { textEndState, changetextEndState } = useModalStore();
+
     useEffect(() => {
         let currentText = '';
         let currentIndex = 0;
@@ -29,7 +32,7 @@ export function AnimatedText({ text, limit = 140, delay = 5 }: TextBoxProps) {
                 if (currentText.length <= limit || (currentText.length > limit && baseText[currentIndex] !== ' ')) {
 
                     setDisplayedText(currentText);
-                    baseText.length <= limit ? setDisplayBtn('') : setDisplayBtn('hidden')
+                    baseText.length <= limit ? handlerTextEnd(true) : setDisplayBtn('hidden')
                     baseText.length <= limit ? setAnimationNextBtn('') : setAnimationNextBtn('animate-fade-in-out')
 
                 } else {
@@ -56,8 +59,18 @@ export function AnimatedText({ text, limit = 140, delay = 5 }: TextBoxProps) {
 
     function handlerBack() {
         setBaseText(text);
+        handlerTextEnd(false);
+    }
+
+    function handlerTextEnd(state: boolean | undefined) {
+        changetextEndState(state!);
+        setDisplayBtn('');
+        console.log('tEnd ',textEndState)
+        
 
     }
+
+
 
     return (
         <div className="relative h-full flex flex-col justify-between z-40">

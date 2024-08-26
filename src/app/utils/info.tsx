@@ -48,7 +48,7 @@ export const card = [
         id: 7,
         title: 'Para-raios e a dissipação no solo',
         content:'Os para-raios, também conhecidos como sistemas de proteção contra descargas atmosféricas (SPDA), são dispositivos projetados para proteger edifícios e estruturas contra danos causados por raios. Eles direcionam a energia elétrica dos raios para o solo de forma segura, evitando danos aos ocupantes e à própria estrutura. Geralmente, consistem em hastes metálicas instaladas no topo de edifícios ou estruturas altas, conectadas a uma rede de cabos condutores que conduzem a corrente elétrica para o solo, onde é dissipada de forma segura, ajudando a minimizar riscos de incêndios, danos estruturais e lesões às pessoas.',
-        position: 'top-[62%] right-[23%]'
+        position: 'top-[62%] right-[15%]'
     },
 
 
