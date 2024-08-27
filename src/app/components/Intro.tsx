@@ -92,12 +92,11 @@ export function Intro({ title = "title test" }: textInfoProp) {
                             <Image
                                 src={cloudElement}
                                 alt={title}
-                                layout="fill" // Faz a imagem preencher o contêiner
-                                objectFit="contain" // Ajusta a imagem para cobrir o contêiner  
+                                layout="fill" 
+                                objectFit="contain" 
                                 priority={true}
                             />
-                        </div>
-                   
+                        </div>                   
                 </div>
             </div>
         </div>
