@@ -38,7 +38,7 @@ export function Intro({ title = "title test" }: textInfoProp) {
     return (
         <div className='relative w-full pb-24 bg-gradient-to-b from-amber-500 to-yellow-400 pt-20 '>
             <div className='flex justify-center items-center gap-2 w-full -rotate-1 bg-orange-500 py-7 '>
-                <h1 className='font-bold text-4xl text-center '>CAMPO <br /> ELÉTRICO</h1>
+                <h1 className='font-bold text-4xl text-center text-[#fff] '>CAMPO <br /> ELÉTRICO</h1>
                 <div className='relative w-[52px] h-[62px]'>
                     <Image
                         src={eElement}

@@ -24,7 +24,7 @@ export function Pin({ id, title = "", content = "", position }: textInfoProp) {
             title: title,
             content: content,
         })}>
-            <span className='flex justify-center items-center bg-orange-500 text-sm md:text-base rounded-full w-full h-full '>0{id! + 1}</span>
+            <span className='flex justify-center items-center bg-orange-500 text-sm md:text-base text-[#fff] rounded-full w-full h-full '>0{id! + 1}</span>
         </div>
     )
 }
