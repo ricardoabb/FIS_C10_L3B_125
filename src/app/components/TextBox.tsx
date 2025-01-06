@@ -7,16 +7,17 @@ import { useModalStore } from "@/app/store/useModalStore";
 type textInfoProp = {
     title?: string;
     content?: string;
+    link?: string;
     hide?: boolean;
     bgColor?: string;
     
 };
 
-export function TextBox({ content = "", title = "", hide = false, bgColor = "black" }: textInfoProp) {
+export function TextBox({ content = "", title = "", hide = false, bgColor = "black", link }: textInfoProp) {
     const { isOpen } = useModalStore();
     
     return (
-        <div id="container" className={`relative ${isOpen ? 'w-full mb-24'  : 'w-[90%] mb-16' }  lg:w-[750px] h-[450px] md:h-[400px] mx-auto py-8 pt-14 px-5 ${bgColor} rounded-2xl shadow-md`}>
+        <div id="container" className={`relative ${isOpen ? 'w-full mb-24'  : 'w-[90%] mb-16' }  lg:w-[750px] h-[460px] md:h-[400px] mx-auto py-8 pt-14 px-5 ${bgColor} rounded-2xl shadow-md`}>
 
 
             <div id="title" className={`flex items-center justify-center gap-2 border-sand-500  ${hide ? "hidden" : "block"} `}>
@@ -30,6 +31,12 @@ export function TextBox({ content = "", title = "", hide = false, bgColor = "bla
                     <AnimatedText text={content} limit={290} />
                 </div>
             </div>
+            {
+              link &&(
+                <p className='text-[#fff] pb-4'>Para saber mais <a href="http://www.inpe.br/webelat/homepage/menu/el.atm/como.se.formam.os.raios.php" target='_blank' className='font-bold text-[#f97316]'> clique aqui</a></p>                
+            )
+            }
+            
 
         </div>
     )

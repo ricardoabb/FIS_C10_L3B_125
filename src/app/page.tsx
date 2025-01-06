@@ -11,7 +11,7 @@ export default function Home() {
      <div className="relative w-full h-[200px] bg-gradient-to-b from-yellow-400 to-sky-950"></div>
      <PrincipalContainer />
      <div className="relative py-20 bg-[#4f2708] z-10">
-     <TextBox title="Conclusão" content={info.conclusion} bgColor='bg-[#2F1704] bg-opacity-75 text-white' />
+     <TextBox title="Conclusão" content={info.conclusion} link={info.conclusion_link} bgColor='bg-[#2F1704] bg-opacity-75 text-white' />
      </div>
      <CardModal />
     </main>
